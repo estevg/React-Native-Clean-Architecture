@@ -1,0 +1,40 @@
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        alias: {
+          '@appBank': './src',
+          '@screens': './src/screens',
+          '@components': './src/components',
+        },
+        extensions: [
+          '.ios.ts',
+          '.android.ts',
+          '.ts',
+          '.ios.tsx',
+          '.android.tsx',
+          '.tsx',
+          '.jsx',
+          '.js',
+          '.ios.js',
+          '.android.js',
+          '.json',
+          '.png',
+          '.jpg',
+          '.webp',
+          '.gif',
+          '.svg',
+          '.ttf',
+          '.mp3',
+          '.mp4',
+        ],
+      },
+    ],
+    ['transform-remove-console', {exclude: ['log']}],
+    ['@babel/plugin-proposal-decorators', {legacy: true}],
+    ['@babel/plugin-transform-flow-strip-types'],
+    ['@babel/plugin-proposal-class-properties', {loose: true}],
+  ],
+};
